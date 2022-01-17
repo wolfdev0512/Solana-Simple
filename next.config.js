@@ -1,6 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withPlugins = require("next-compose-plugins");
 
-module.exports = nextConfig
+const withTM = require("next-transpile-modules")([
+  "@solana/wallet-adapter-base",
+  "@solana/wallet-adapter-react",
+]);
+
+const plugins = [
+  [
+    withTM,
+    {
+      reactStrictMode: true,
+    },
+  ],
+];
+
+module.exports = withPlugins(plugins);
