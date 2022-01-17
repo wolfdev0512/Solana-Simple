@@ -20,7 +20,16 @@ export const SendButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
+  & > *:not(:last-child) {
+    margin-right: 20px;
+  }
 `;
 
-export const SendAddressInput = styled.input``;
-export const SendButton = styled.button``;
+export const SendAddressInput = styled.input`
+  font-size: 16px;
+  line-height: 24px;
+`;
+export const SendButton = styled.button`
+  height: 30px;
+`;

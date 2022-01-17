@@ -7,12 +7,13 @@ import {
 } from "@solana/wallet-adapter-react";
 // style
 import("@solana/wallet-adapter-react-ui/styles.css" as any);
-// component
+// Hooks
 import { useNotify } from "hooks/notify";
 // context
 import PurchaseContext from "context/PurchaseContext";
 // idl json
 import idl from "utils/idl.json";
+
 import {
   PublicKey,
   SystemProgram,

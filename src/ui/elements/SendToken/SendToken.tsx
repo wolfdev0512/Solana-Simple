@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+//styled component
 import {
   Layout,
   WalletConnectButtonContainer,

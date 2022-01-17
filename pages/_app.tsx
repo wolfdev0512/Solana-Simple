@@ -12,6 +12,7 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import "../styles/globals.css";
 //  to import context
 
+import { PurchaseProvider } from "context/PurchaseProvider";
 const ClientWalletProvider = dynamic<{ children: ReactNode }>(
   () =>
     import("context/ClientWalletProvider").then(
@@ -33,7 +34,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SnackbarProvider>
       <ConnectionProvider endpoint={endpoint}>
         <ClientWalletProvider>
-          <Component {...pageProps} />
+          <PurchaseProvider>
+            <Component {...pageProps} />
+          </PurchaseProvider>
         </ClientWalletProvider>
       </ConnectionProvider>
     </SnackbarProvider>

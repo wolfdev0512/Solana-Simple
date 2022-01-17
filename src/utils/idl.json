@@ -1,0 +1,511 @@
+{
+  "version": "0.1.0",
+  "name": "nanox_ico_dao",
+  "instructions": [
+    {
+      "name": "createSale",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "paymentMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "treasuryAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "sale",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "updateSale",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "sale",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": "UpdateSaleArgs"
+          }
+        }
+      ]
+    },
+    {
+      "name": "closeSale",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "feeTaker",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sale",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createDistribution",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMintAuth",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "tokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "distribution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sale",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": "CreateDistributionArgs"
+          }
+        }
+      ]
+    },
+    {
+      "name": "closeDistribution",
+      "accounts": [
+        {
+          "name": "authority",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "feeTaker",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "distribution",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createBuyer",
+      "accounts": [
+        {
+          "name": "initializer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "buyer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sale",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": "CreateBuyerArgs"
+          }
+        }
+      ]
+    },
+    {
+      "name": "deposit",
+      "accounts": [
+        {
+          "name": "initializer",
+          "isMut": false,
+          "isSigner": true
+        },
+        {
+          "name": "initializerPaymentToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "treasuryAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "buyer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "sale",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "args",
+          "type": {
+            "defined": "DepositArgs"
+          }
+        }
+      ]
+    },
+    {
+      "name": "claim",
+      "accounts": [
+        {
+          "name": "initializer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "initializerToken",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "buyer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "distribution",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Sale",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "paymentMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "treasuryAccount",
+            "type": "publicKey"
+          },
+          {
+            "name": "currentPhase",
+            "type": "u8"
+          },
+          {
+            "name": "currentPrice",
+            "type": "u16"
+          },
+          {
+            "name": "currentHardcap",
+            "type": "u64"
+          },
+          {
+            "name": "currentSoldAmount",
+            "type": "u64"
+          },
+          {
+            "name": "totalSoldAmount",
+            "type": "u64"
+          },
+          {
+            "name": "saleEndTime",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Distribution",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "tokenVaultBump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Buyer",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "nonce",
+            "type": "u8"
+          },
+          {
+            "name": "purchaseAmount1",
+            "type": "u64"
+          },
+          {
+            "name": "purchaseAmount2",
+            "type": "u64"
+          },
+          {
+            "name": "purchaseAmount3",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "CreateBuyerArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "nonce",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DepositArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UpdateSaleArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "currentPhase",
+            "type": "u8"
+          },
+          {
+            "name": "currentPrice",
+            "type": "u16"
+          },
+          {
+            "name": "currentHardcap",
+            "type": "u64"
+          },
+          {
+            "name": "currentSoldAmount",
+            "type": "u64"
+          },
+          {
+            "name": "saleEndTime",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CreateDistributionArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "tokenVaultBump",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "AccessDenied",
+      "msg": "Access denied"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidSaleAccount",
+      "msg": "Invalid sale account"
+    },
+    {
+      "code": 6002,
+      "name": "InvalidTreasuryAccount",
+      "msg": "Invalid treasury account"
+    },
+    {
+      "code": 6003,
+      "name": "SaleNotOpened",
+      "msg": "Sale not opened"
+    },
+    {
+      "code": 6004,
+      "name": "SaleEnded",
+      "msg": "Sale ended"
+    },
+    {
+      "code": 6005,
+      "name": "HardcapReached",
+      "msg": "Hardcap reached"
+    },
+    {
+      "code": 6006,
+      "name": "CannotCloseSale",
+      "msg": "Cannot close sale"
+    },
+    {
+      "code": 6007,
+      "name": "InvalidDistributionAccount",
+      "msg": "Invalid distribution account"
+    },
+    {
+      "code": 6008,
+      "name": "CannotCloseDistribution",
+      "msg": "Cannot close distribution"
+    },
+    {
+      "code": 6009,
+      "name": "InsufficientPaymentTokenBalance",
+      "msg": "Insufficient payment token balance"
+    },
+    {
+      "code": 6010,
+      "name": "PurchaseAmountTooSmall",
+      "msg": "Purchase amount is too small"
+    },
+    {
+      "code": 6011,
+      "name": "PurchaseAmountTooMuch",
+      "msg": "Purchase amount is too much"
+    },
+    {
+      "code": 6012,
+      "name": "InvalidBuyerAccount",
+      "msg": "Invalid buyer account"
+    },
+    {
+      "code": 6013,
+      "name": "NoClaimableTokens",
+      "msg": "No claimable tokens"
+    }
+  ]
+}
